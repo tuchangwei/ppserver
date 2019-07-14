@@ -9,7 +9,14 @@ public func routes(_ router: Router) throws {
     
     // Basic "Hello, world!" example
     router.get("arts") { req -> [Art] in
-        let baseURL = "http://\(NIOServerConfig.default().hostname):\(NIOServerConfig.default().port)/"
+        print(req.http.headers)
+        let proto = req.http.headers.firstValue(name: HTTPHeaderName("X-Forwarded-Proto"))
+            ?? req.http.url.scheme
+            ?? "http"
+        guard let host = req.http.headers.firstValue(name: .host) else {
+            throw Abort(.badRequest)
+        }
+        let baseURL = "\(proto)://\(host)/"
         return [
             Art(url: baseURL + "diamond.png"),
             Art(url: baseURL + "flame.png"),
