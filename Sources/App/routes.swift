@@ -18,14 +18,14 @@ public func routes(_ router: Router) throws {
         }
         let baseURL = "\(proto)://\(host)/"
         return [
-            Art(url: baseURL + "diamond.png"),
-            Art(url: baseURL + "flame.png"),
-            Art(url: baseURL + "girl.png"),
-            Art(url: baseURL + "heart.png"),
-            Art(url: baseURL + "marked_man.png"),
-            Art(url: baseURL + "rocket.png"),
-            Art(url: baseURL + "sword.png"),
-            Art(url: baseURL + "toy.png"),
+            Art(url: baseURL + "diamond.png", isNew: true, isLocked: false),
+            Art(url: baseURL + "flame.png", isNew: false, isLocked: true),
+            Art(url: baseURL + "girl.png", isNew: false, isLocked: false),
+            Art(url: baseURL + "heart.png", isNew: false, isLocked: false),
+            Art(url: baseURL + "marked_man.png", isNew: false, isLocked: false),
+            Art(url: baseURL + "rocket.png", isNew: false, isLocked: false),
+            Art(url: baseURL + "sword.png", isNew: false, isLocked: false),
+            Art(url: baseURL + "toy.png", isNew: false, isLocked: false),
         ]
     }
     // Example of configuring a controller
@@ -35,5 +35,7 @@ public func routes(_ router: Router) throws {
     router.delete("todos", Todo.parameter, use: todoController.delete)
 }
 struct Art: Content {
-    var url: String
+    let url: String
+    let isNew: Bool
+    let isLocked: Bool
 }
