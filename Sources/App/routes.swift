@@ -18,14 +18,15 @@ public func routes(_ router: Router) throws {
         }
         let baseURL = "\(proto)://\(host)/"
         return [
-            Art(url: baseURL + "diamond.png", isNew: true, isLocked: false),
-            Art(url: baseURL + "flame.png", isNew: false, isLocked: true),
-            Art(url: baseURL + "girl.png", isNew: false, isLocked: false),
-            Art(url: baseURL + "heart.png", isNew: false, isLocked: false),
-            Art(url: baseURL + "marked_man.png", isNew: false, isLocked: false),
-            Art(url: baseURL + "rocket.png", isNew: false, isLocked: false),
-            Art(url: baseURL + "sword.png", isNew: false, isLocked: false),
-            Art(url: baseURL + "toy.png", isNew: false, isLocked: false),
+            Art(url: baseURL + "1.png", isNew: true, isLocked: false),
+            Art(url: baseURL + "2.png", isNew: false, isLocked: true),
+            Art(url: baseURL + "3.png", isNew: false, isLocked: false),
+            Art(url: baseURL + "4.png", isNew: false, isLocked: false),
+            Art(url: baseURL + "5.png", isNew: false, isLocked: false),
+            Art(url: baseURL + "6.png", isNew: false, isLocked: false),
+            Art(url: baseURL + "7.png", isNew: false, isLocked: false),
+            Art(url: baseURL + "8.png", isNew: false, isLocked: false),
+            Art(url: baseURL + "9.png", isNew: false, isLocked: false),
         ]
     }
     // Example of configuring a controller
