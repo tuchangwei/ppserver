@@ -18,6 +18,7 @@ public func routes(_ router: Router) throws {
         }
         let baseURL = "\(proto)://\(host)/"
         return [
+            Art(url: baseURL + "0.png", isNew: true, isLocked: false),
             Art(url: baseURL + "1.png", isNew: true, isLocked: false),
             Art(url: baseURL + "2.png", isNew: false, isLocked: true),
             Art(url: baseURL + "3.png", isNew: false, isLocked: false),
